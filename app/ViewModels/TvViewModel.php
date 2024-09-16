@@ -10,11 +10,13 @@ class TvViewModel extends ViewModel
 {
     public $popularTv;
     public $topRatedTv;
+    public $airingTv;
     public $genres;
-    public function __construct($popularTv, $topRatedTv, $genres)
+    public function __construct($popularTv, $topRatedTv, $airingTv, $genres)
     {
         $this->popularTv = $popularTv;
         $this->topRatedTv = $topRatedTv;
+        $this->airingTv = $airingTv;
         $this->genres = $genres;
     }
 
@@ -28,6 +30,13 @@ class TvViewModel extends ViewModel
     {
 
         return $this->formatTvShows($this->topRatedTv);
+
+    }
+
+    public function airingTv()
+    {
+
+        return $this->formatTvShows($this->airingTv);
 
     }
 
@@ -56,7 +65,7 @@ class TvViewModel extends ViewModel
             'poster_path','id','genre_ids','name','vote_average','overview','first_air_date','genres'
             ]);
 
-        })->dump();
+        });
 
     }
 

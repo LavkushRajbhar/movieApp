@@ -26,7 +26,7 @@ class TvShowViewModel extends ViewModel
          ])
         ->only([
         'poster_path','id','genres','name','vote_average','overview','first_air_date','credits','videos','images','crew','cast','images','logos','created_by'
-        ])->dump();
+        ]);
         ;
     }
 
